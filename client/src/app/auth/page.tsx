@@ -47,14 +47,14 @@ export default function Home() {
         className={`absolute ${userpage == "signup" ? "right-52 top-28" : "left-52 top-28"
           } flex flex-col items-center justify-center z-10 `}
       >
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="popLayout">
           <MotionDiv
             key={userpage}
             initial={{ opacity: 0, x: userpage === "signin" ? -100 : 100 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: userpage === "signin" ? 0 : 0 }}
             transition={{ duration: 0.5 }}
-            className="w-full max-w-md"
+            className="w-full "
           >
             <Form page={userpage} />
           </MotionDiv>

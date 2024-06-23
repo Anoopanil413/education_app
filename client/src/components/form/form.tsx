@@ -18,14 +18,14 @@ const Form = ({ page }: { page: PageProp }) => {
   const renderError = (error: FieldError | undefined) => {
     if (!error) return null;
     if (typeof error.message === 'string') {
-      return <p role="alert" className="text-red-500 text-xs italic p-2 text-justify ">{error.message}</p>;
+      return <p role="alert" className="text-red-500 text-xs italic p-2 text-justify max-w-md">{error.message}</p>;
     }
     return null;
   };
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-sm p-2 md:p-4 bg-blue-900 bg-opacity-35  rounded-lg border border-blue-950 shadow-2xl" >
+      <form onSubmit={handleSubmit(onSubmit)} className="w-full p-2 md:p-4 bg-blue-900 bg-opacity-35  rounded-lg border border-blue-950 shadow-2xl" >
         {page === "signup" && (
           <>
             <div className="my-6 w-full flex justify-center underline underline-offset-2">
