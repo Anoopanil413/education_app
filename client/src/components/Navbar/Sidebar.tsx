@@ -13,7 +13,7 @@ const Sidebar = ({ children }: { children: ReactElement }) => {
     };
 
     return (
-        <div className="relative h-[100vh-72px] border border-blue-900 flex">
+        <div className="relative h-[100vh-72px]  flex">
             {/* Toggle Button for Small Screens */}
             <div className="md:hidden absolute top-4 left-4 z-20">
                 <button onClick={toggleSidebar} className="focus:outline-none">
@@ -29,7 +29,7 @@ const Sidebar = ({ children }: { children: ReactElement }) => {
                         animate={{ x: 0 }}
                         exit={{ x: '-100%' }}
                         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                        className="fixed inset-0 bg-black text-white md:static md:w-64 z-10  h-[calc(100vh-72px)] "
+                        className="fixed inset-0 bg-gray-900 text-white md:static md:w-64 z-10  h-[calc(100vh-72px)] border-2 border-blue-900"
                     >
                         <div className="p-4">
                             <h2 className="text-2xl font-bold mb-4">Content</h2>

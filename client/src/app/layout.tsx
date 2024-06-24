@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Sidebar from "@/components/Navbar/Sidebar";
+import Footer from "@/components/Navbar/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: any;
 }>) {
   return (
     <html lang="en">
@@ -22,13 +23,11 @@ export default function RootLayout({
 
         <Navbar isLoggedIn={true} />
         <Sidebar>
-          <div className="w-full border border-red-600">
+          {children}
 
-            <h1 >Main content</h1>
-          </div>
         </Sidebar>
+        <Footer />
 
-        {children}
 
       </body>
     </html>

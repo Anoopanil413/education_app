@@ -13,7 +13,7 @@ const Navbar = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
     };
 
     return (
-        <div className="w-full shadow h-[72px]">
+        <div className="w-full shadow h-[72px] border border-blue-900 bg-gray-900 text-white">
             <div className="flex items-center justify-between p-4">
                 {/* Hamburger menu for small screens */}
                 <div className="md:hidden">
