@@ -4,8 +4,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { container, item } from '@/utils/motion';
 
-import sylabuses from '../../../public/sylabuses.png'
 import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 
 // const containerVariants = {
 //   hidden: { opacity: 1, scale: 0 },
@@ -29,14 +30,14 @@ import Image from 'next/image';
 
 export interface PropsType {
     heading: string
-    images: string
+    imags: any
     color: string
-    data: any
+    data?: any
 }
 
-const Card: React.FC<PropsType> = ({ heading, images, color, data }: PropsType) => {
+const Card: React.FC<PropsType> = ({ heading, imags, color, data }: PropsType) => {
     return (
-        <div className={`w-[200px] h-[250px] overflow-hidden shadow-[rgba(0,0,15,0.5)_10px_5px_4px_0px] border ${color ? `border-${color}-600` : "border-blue-700 "} relative rounded-md`}>
+        <div className={`w-[200px] h-[250px] overflow-hidden shadow-[rgba(0,0,15,0.5)_10px_5px_4px_0px] border  border-blue-700  relative rounded-md`}>
             <h2 className='font-bold text-2xl border text-center p-4 shadow-lg'>{heading}</h2>
 
             <motion.div
@@ -44,12 +45,17 @@ const Card: React.FC<PropsType> = ({ heading, images, color, data }: PropsType) 
                 animate="visible"
                 variants={container}
                 style={styles.animationContainer}
-                className={`absolute top-[40%] left-[30%] transform -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] rounded-full ${color ? `border-${color}-600` : "border-blue-700 "} z-0 flex items-center justify-center`}
+                className={`absolute top-[40%] left-[30%] transform -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] rounded-full border-blue-700  z-0 flex items-center justify-center`}
 
             >
                 <motion.div variants={item} style={styles.circle}>
-                    <Image src={images} alt="description" style={styles.image} />
+                    <Image src={imags} alt="description" style={styles.image} />
                 </motion.div>
+
+            </motion.div>
+
+            <motion.div variants={item} className='bg-black absolute left-2 bottom-2 border p-1 rounded-full transform hover:scale-110 transition duration-300'>
+                <button className='text-white w-8'><FontAwesomeIcon icon={faPenToSquare} /></button>
             </motion.div>
         </div>
     );

@@ -19,16 +19,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-
-        <Navbar isLoggedIn={true} />
-        <Sidebar>
-          {children}
-
-        </Sidebar>
-        <Footer />
-
-
+      <body className={`${inter.className} bg-gray-100`}>
+        <div className="flex flex-col h-screen">
+          <Navbar isLoggedIn={true} />
+          <div className="flex  overflow-hidden">
+            <Sidebar>
+              {children}
+            </Sidebar>
+          </div>
+          <Footer />
+        </div>
       </body>
     </html>
   );

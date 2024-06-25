@@ -13,7 +13,7 @@ const Sidebar = ({ children }: { children: ReactElement }) => {
     };
 
     return (
-        <div className="relative h-[100vh-72px]  flex">
+        <div className="relative h-[100vh-72px]  flex ">
             {/* Toggle Button for Small Screens */}
             <div className="md:hidden absolute top-4 left-4 z-20">
                 <button onClick={toggleSidebar} className="focus:outline-none">
@@ -65,7 +65,7 @@ const Sidebar = ({ children }: { children: ReactElement }) => {
             </AnimatePresence>
 
             {/* Main Content */}
-            <div className={`flex-1 p-4 transition-all duration-300 `}>
+            <div className={`flex-1  overflow-y-auto p-4 transition-all duration-300 ${isOpen ? "w-[90vw]" : "w-[100vw]"}`}>
                 {children}
             </div>
         </div>
