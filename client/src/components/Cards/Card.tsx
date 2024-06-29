@@ -37,8 +37,8 @@ export interface PropsType {
 
 const Card: React.FC<PropsType> = ({ heading, imags, color, data }: PropsType) => {
     return (
-        <div className={`w-[200px] h-[250px] overflow-hidden shadow-[rgba(0,0,15,0.5)_10px_5px_4px_0px] border  border-blue-700  relative rounded-md`}>
-            <h2 className='font-bold text-2xl border text-center p-4 shadow-lg'>{heading}</h2>
+        <div className={`w-[200px] h-[250px] overflow-hidden shadow-[rgba(0,0,15,0.5)_10px_5px_4px_0px] bg-gray-900 border  border-blue-700  relative rounded-md`}>
+            <h2 className='font-bold text-2xl border-b border-blue-700 text-blue-500 text-center p-4 shadow-lg'>{heading}</h2>
 
             <motion.div
                 initial="hidden"

@@ -29,7 +29,7 @@ const Userbio = () => {
                     whileHover={{ scale: 1.2 }}
                     transition={{ duration: 0.3 }}
                 >
-                    <button className="text-white w-8">
+                    <button className="text-white w-8 border border-blue-700">
                         <FontAwesomeIcon icon={faPenToSquare} />
                     </button>
                 </motion.div>
